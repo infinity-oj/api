@@ -7,7 +7,11 @@
 package protobuf_spec
 
 import (
+	context "context"
 	proto "github.com/golang/protobuf/proto"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -1047,4 +1051,192 @@ func file_files_proto_init() {
 	file_files_proto_rawDesc = nil
 	file_files_proto_goTypes = nil
 	file_files_proto_depIdxs = nil
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConnInterface
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion6
+
+// FilesClient is the client API for Files service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type FilesClient interface {
+	CreateFileSpace(ctx context.Context, in *CreateFileSpaceRequest, opts ...grpc.CallOption) (*CreateFileSpaceResponse, error)
+	CreateDirectory(ctx context.Context, in *CreateDirectoryRequest, opts ...grpc.CallOption) (*CreateDirectoryResponse, error)
+	CreateFile(ctx context.Context, in *CreateFileRequest, opts ...grpc.CallOption) (*CreateFileResponse, error)
+	FetchFile(ctx context.Context, in *FetchFileRequest, opts ...grpc.CallOption) (*FetchFileResponse, error)
+}
+
+type filesClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewFilesClient(cc grpc.ClientConnInterface) FilesClient {
+	return &filesClient{cc}
+}
+
+func (c *filesClient) CreateFileSpace(ctx context.Context, in *CreateFileSpaceRequest, opts ...grpc.CallOption) (*CreateFileSpaceResponse, error) {
+	out := new(CreateFileSpaceResponse)
+	err := c.cc.Invoke(ctx, "/Files/CreateFileSpace", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *filesClient) CreateDirectory(ctx context.Context, in *CreateDirectoryRequest, opts ...grpc.CallOption) (*CreateDirectoryResponse, error) {
+	out := new(CreateDirectoryResponse)
+	err := c.cc.Invoke(ctx, "/Files/CreateDirectory", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *filesClient) CreateFile(ctx context.Context, in *CreateFileRequest, opts ...grpc.CallOption) (*CreateFileResponse, error) {
+	out := new(CreateFileResponse)
+	err := c.cc.Invoke(ctx, "/Files/CreateFile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *filesClient) FetchFile(ctx context.Context, in *FetchFileRequest, opts ...grpc.CallOption) (*FetchFileResponse, error) {
+	out := new(FetchFileResponse)
+	err := c.cc.Invoke(ctx, "/Files/FetchFile", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// FilesServer is the server API for Files service.
+type FilesServer interface {
+	CreateFileSpace(context.Context, *CreateFileSpaceRequest) (*CreateFileSpaceResponse, error)
+	CreateDirectory(context.Context, *CreateDirectoryRequest) (*CreateDirectoryResponse, error)
+	CreateFile(context.Context, *CreateFileRequest) (*CreateFileResponse, error)
+	FetchFile(context.Context, *FetchFileRequest) (*FetchFileResponse, error)
+}
+
+// UnimplementedFilesServer can be embedded to have forward compatible implementations.
+type UnimplementedFilesServer struct {
+}
+
+func (*UnimplementedFilesServer) CreateFileSpace(context.Context, *CreateFileSpaceRequest) (*CreateFileSpaceResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFileSpace not implemented")
+}
+func (*UnimplementedFilesServer) CreateDirectory(context.Context, *CreateDirectoryRequest) (*CreateDirectoryResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateDirectory not implemented")
+}
+func (*UnimplementedFilesServer) CreateFile(context.Context, *CreateFileRequest) (*CreateFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateFile not implemented")
+}
+func (*UnimplementedFilesServer) FetchFile(context.Context, *FetchFileRequest) (*FetchFileResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchFile not implemented")
+}
+
+func RegisterFilesServer(s *grpc.Server, srv FilesServer) {
+	s.RegisterService(&_Files_serviceDesc, srv)
+}
+
+func _Files_CreateFileSpace_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFileSpaceRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FilesServer).CreateFileSpace(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Files/CreateFileSpace",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FilesServer).CreateFileSpace(ctx, req.(*CreateFileSpaceRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Files_CreateDirectory_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateDirectoryRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FilesServer).CreateDirectory(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Files/CreateDirectory",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FilesServer).CreateDirectory(ctx, req.(*CreateDirectoryRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Files_CreateFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FilesServer).CreateFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Files/CreateFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FilesServer).CreateFile(ctx, req.(*CreateFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Files_FetchFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FetchFileRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(FilesServer).FetchFile(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Files/FetchFile",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(FilesServer).FetchFile(ctx, req.(*FetchFileRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Files_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "Files",
+	HandlerType: (*FilesServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreateFileSpace",
+			Handler:    _Files_CreateFileSpace_Handler,
+		},
+		{
+			MethodName: "CreateDirectory",
+			Handler:    _Files_CreateDirectory_Handler,
+		},
+		{
+			MethodName: "CreateFile",
+			Handler:    _Files_CreateFile_Handler,
+		},
+		{
+			MethodName: "FetchFile",
+			Handler:    _Files_FetchFile_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "files.proto",
 }

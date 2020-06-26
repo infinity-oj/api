@@ -7,7 +7,11 @@
 package protobuf_spec
 
 import (
+	context "context"
 	proto "github.com/golang/protobuf/proto"
+	grpc "google.golang.org/grpc"
+	codes "google.golang.org/grpc/codes"
+	status "google.golang.org/grpc/status"
 	protoreflect "google.golang.org/protobuf/reflect/protoreflect"
 	protoimpl "google.golang.org/protobuf/runtime/protoimpl"
 	reflect "reflect"
@@ -532,4 +536,120 @@ func file_pages_proto_init() {
 	file_pages_proto_rawDesc = nil
 	file_pages_proto_goTypes = nil
 	file_pages_proto_depIdxs = nil
+}
+
+// Reference imports to suppress errors if they are not otherwise used.
+var _ context.Context
+var _ grpc.ClientConnInterface
+
+// This is a compile-time assertion to ensure that this generated file
+// is compatible with the grpc package it is being compiled against.
+const _ = grpc.SupportPackageIsVersion6
+
+// PagesClient is the client API for Pages service.
+//
+// For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
+type PagesClient interface {
+	CreatePage(ctx context.Context, in *CreatePageRequest, opts ...grpc.CallOption) (*CreatePageResponse, error)
+	FetchPage(ctx context.Context, in *FetchPageRequest, opts ...grpc.CallOption) (*FetchPageResponse, error)
+}
+
+type pagesClient struct {
+	cc grpc.ClientConnInterface
+}
+
+func NewPagesClient(cc grpc.ClientConnInterface) PagesClient {
+	return &pagesClient{cc}
+}
+
+func (c *pagesClient) CreatePage(ctx context.Context, in *CreatePageRequest, opts ...grpc.CallOption) (*CreatePageResponse, error) {
+	out := new(CreatePageResponse)
+	err := c.cc.Invoke(ctx, "/Pages/CreatePage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *pagesClient) FetchPage(ctx context.Context, in *FetchPageRequest, opts ...grpc.CallOption) (*FetchPageResponse, error) {
+	out := new(FetchPageResponse)
+	err := c.cc.Invoke(ctx, "/Pages/FetchPage", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+// PagesServer is the server API for Pages service.
+type PagesServer interface {
+	CreatePage(context.Context, *CreatePageRequest) (*CreatePageResponse, error)
+	FetchPage(context.Context, *FetchPageRequest) (*FetchPageResponse, error)
+}
+
+// UnimplementedPagesServer can be embedded to have forward compatible implementations.
+type UnimplementedPagesServer struct {
+}
+
+func (*UnimplementedPagesServer) CreatePage(context.Context, *CreatePageRequest) (*CreatePageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreatePage not implemented")
+}
+func (*UnimplementedPagesServer) FetchPage(context.Context, *FetchPageRequest) (*FetchPageResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchPage not implemented")
+}
+
+func RegisterPagesServer(s *grpc.Server, srv PagesServer) {
+	s.RegisterService(&_Pages_serviceDesc, srv)
+}
+
+func _Pages_CreatePage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreatePageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PagesServer).CreatePage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Pages/CreatePage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PagesServer).CreatePage(ctx, req.(*CreatePageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Pages_FetchPage_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FetchPageRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(PagesServer).FetchPage(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Pages/FetchPage",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(PagesServer).FetchPage(ctx, req.(*FetchPageRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+var _Pages_serviceDesc = grpc.ServiceDesc{
+	ServiceName: "Pages",
+	HandlerType: (*PagesServer)(nil),
+	Methods: []grpc.MethodDesc{
+		{
+			MethodName: "CreatePage",
+			Handler:    _Pages_CreatePage_Handler,
+		},
+		{
+			MethodName: "FetchPage",
+			Handler:    _Pages_FetchPage_Handler,
+		},
+	},
+	Streams:  []grpc.StreamDesc{},
+	Metadata: "pages.proto",
 }
