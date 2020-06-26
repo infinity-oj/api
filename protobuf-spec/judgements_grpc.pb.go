@@ -23,6 +23,8 @@ type JudgementsClient interface {
 	FetchJudgement(ctx context.Context, in *FetchJudgementRequest, opts ...grpc.CallOption) (*FetchJudgementResponse, error)
 	ReturnJudgement(ctx context.Context, in *ReturnJudgementRequest, opts ...grpc.CallOption) (*ReturnJudgementResponse, error)
 	ListJudgements(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error)
+	FetchJudgementTask(ctx context.Context, in *FetchJudgementTaskRequest, opts ...grpc.CallOption) (*FetchJudgementTaskResponse, error)
+	ReturnJudgementTask(ctx context.Context, in *ReturnJudgementTaskRequest, opts ...grpc.CallOption) (*ReturnJudgementTaskResponse, error)
 }
 
 type judgementsClient struct {
@@ -87,6 +89,24 @@ func (c *judgementsClient) ListJudgements(ctx context.Context, in *ListRequest, 
 	return out, nil
 }
 
+func (c *judgementsClient) FetchJudgementTask(ctx context.Context, in *FetchJudgementTaskRequest, opts ...grpc.CallOption) (*FetchJudgementTaskResponse, error) {
+	out := new(FetchJudgementTaskResponse)
+	err := c.cc.Invoke(ctx, "/Judgements/FetchJudgementTask", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *judgementsClient) ReturnJudgementTask(ctx context.Context, in *ReturnJudgementTaskRequest, opts ...grpc.CallOption) (*ReturnJudgementTaskResponse, error) {
+	out := new(ReturnJudgementTaskResponse)
+	err := c.cc.Invoke(ctx, "/Judgements/ReturnJudgementTask", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // JudgementsServer is the server API for Judgements service.
 // All implementations must embed UnimplementedJudgementsServer
 // for forward compatibility
@@ -97,6 +117,8 @@ type JudgementsServer interface {
 	FetchJudgement(context.Context, *FetchJudgementRequest) (*FetchJudgementResponse, error)
 	ReturnJudgement(context.Context, *ReturnJudgementRequest) (*ReturnJudgementResponse, error)
 	ListJudgements(context.Context, *ListRequest) (*ListResponse, error)
+	FetchJudgementTask(context.Context, *FetchJudgementTaskRequest) (*FetchJudgementTaskResponse, error)
+	ReturnJudgementTask(context.Context, *ReturnJudgementTaskRequest) (*ReturnJudgementTaskResponse, error)
 	mustEmbedUnimplementedJudgementsServer()
 }
 
@@ -121,6 +143,12 @@ func (*UnimplementedJudgementsServer) ReturnJudgement(context.Context, *ReturnJu
 }
 func (*UnimplementedJudgementsServer) ListJudgements(context.Context, *ListRequest) (*ListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListJudgements not implemented")
+}
+func (*UnimplementedJudgementsServer) FetchJudgementTask(context.Context, *FetchJudgementTaskRequest) (*FetchJudgementTaskResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method FetchJudgementTask not implemented")
+}
+func (*UnimplementedJudgementsServer) ReturnJudgementTask(context.Context, *ReturnJudgementTaskRequest) (*ReturnJudgementTaskResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReturnJudgementTask not implemented")
 }
 func (*UnimplementedJudgementsServer) mustEmbedUnimplementedJudgementsServer() {}
 
@@ -236,6 +264,42 @@ func _Judgements_ListJudgements_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Judgements_FetchJudgementTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(FetchJudgementTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JudgementsServer).FetchJudgementTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Judgements/FetchJudgementTask",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JudgementsServer).FetchJudgementTask(ctx, req.(*FetchJudgementTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Judgements_ReturnJudgementTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReturnJudgementTaskRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JudgementsServer).ReturnJudgementTask(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Judgements/ReturnJudgementTask",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JudgementsServer).ReturnJudgementTask(ctx, req.(*ReturnJudgementTaskRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Judgements_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "Judgements",
 	HandlerType: (*JudgementsServer)(nil),
@@ -263,6 +327,14 @@ var _Judgements_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "ListJudgements",
 			Handler:    _Judgements_ListJudgements_Handler,
+		},
+		{
+			MethodName: "FetchJudgementTask",
+			Handler:    _Judgements_FetchJudgementTask_Handler,
+		},
+		{
+			MethodName: "ReturnJudgementTask",
+			Handler:    _Judgements_ReturnJudgementTask_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
