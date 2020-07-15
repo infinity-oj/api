@@ -138,644 +138,6 @@ func (*ListResponse) Descriptor() ([]byte, []int) {
 	return file_judgements_proto_rawDescGZIP(), []int{1}
 }
 
-type SubmitJudgementRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	SubmissionId uint64 `protobuf:"varint,1,opt,name=submission_id,json=submissionId,proto3" json:"submission_id,omitempty"`
-	PublicSpace  string `protobuf:"bytes,2,opt,name=public_space,json=publicSpace,proto3" json:"public_space,omitempty"`
-	PrivateSpace string `protobuf:"bytes,3,opt,name=private_space,json=privateSpace,proto3" json:"private_space,omitempty"`
-	UserSpace    string `protobuf:"bytes,4,opt,name=user_space,json=userSpace,proto3" json:"user_space,omitempty"`
-	TestCase     string `protobuf:"bytes,5,opt,name=test_case,json=testCase,proto3" json:"test_case,omitempty"`
-}
-
-func (x *SubmitJudgementRequest) Reset() {
-	*x = SubmitJudgementRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[2]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *SubmitJudgementRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SubmitJudgementRequest) ProtoMessage() {}
-
-func (x *SubmitJudgementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[2]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SubmitJudgementRequest.ProtoReflect.Descriptor instead.
-func (*SubmitJudgementRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{2}
-}
-
-func (x *SubmitJudgementRequest) GetSubmissionId() uint64 {
-	if x != nil {
-		return x.SubmissionId
-	}
-	return 0
-}
-
-func (x *SubmitJudgementRequest) GetPublicSpace() string {
-	if x != nil {
-		return x.PublicSpace
-	}
-	return ""
-}
-
-func (x *SubmitJudgementRequest) GetPrivateSpace() string {
-	if x != nil {
-		return x.PrivateSpace
-	}
-	return ""
-}
-
-func (x *SubmitJudgementRequest) GetUserSpace() string {
-	if x != nil {
-		return x.UserSpace
-	}
-	return ""
-}
-
-func (x *SubmitJudgementRequest) GetTestCase() string {
-	if x != nil {
-		return x.TestCase
-	}
-	return ""
-}
-
-type SubmitJudgementResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Status Status `protobuf:"varint,1,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
-	Score  uint64 `protobuf:"varint,2,opt,name=score,proto3" json:"score,omitempty"`
-}
-
-func (x *SubmitJudgementResponse) Reset() {
-	*x = SubmitJudgementResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[3]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *SubmitJudgementResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*SubmitJudgementResponse) ProtoMessage() {}
-
-func (x *SubmitJudgementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[3]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use SubmitJudgementResponse.ProtoReflect.Descriptor instead.
-func (*SubmitJudgementResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{3}
-}
-
-func (x *SubmitJudgementResponse) GetStatus() Status {
-	if x != nil {
-		return x.Status
-	}
-	return Status_success
-}
-
-func (x *SubmitJudgementResponse) GetScore() uint64 {
-	if x != nil {
-		return x.Score
-	}
-	return 0
-}
-
-type FetchFileHashRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	ProblemId string `protobuf:"bytes,1,opt,name=problem_id,json=problemId,proto3" json:"problem_id,omitempty"`
-	Filename  string `protobuf:"bytes,2,opt,name=filename,proto3" json:"filename,omitempty"`
-}
-
-func (x *FetchFileHashRequest) Reset() {
-	*x = FetchFileHashRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[4]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchFileHashRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchFileHashRequest) ProtoMessage() {}
-
-func (x *FetchFileHashRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[4]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchFileHashRequest.ProtoReflect.Descriptor instead.
-func (*FetchFileHashRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{4}
-}
-
-func (x *FetchFileHashRequest) GetProblemId() string {
-	if x != nil {
-		return x.ProblemId
-	}
-	return ""
-}
-
-func (x *FetchFileHashRequest) GetFilename() string {
-	if x != nil {
-		return x.Filename
-	}
-	return ""
-}
-
-type FetchFileHashResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Status Status `protobuf:"varint,1,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
-	Sha1   string `protobuf:"bytes,2,opt,name=sha1,proto3" json:"sha1,omitempty"`
-}
-
-func (x *FetchFileHashResponse) Reset() {
-	*x = FetchFileHashResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[5]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchFileHashResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchFileHashResponse) ProtoMessage() {}
-
-func (x *FetchFileHashResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[5]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchFileHashResponse.ProtoReflect.Descriptor instead.
-func (*FetchFileHashResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{5}
-}
-
-func (x *FetchFileHashResponse) GetStatus() Status {
-	if x != nil {
-		return x.Status
-	}
-	return Status_success
-}
-
-func (x *FetchFileHashResponse) GetSha1() string {
-	if x != nil {
-		return x.Sha1
-	}
-	return ""
-}
-
-type FetchJudgeFileRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Token    string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Space    string `protobuf:"bytes,2,opt,name=space,proto3" json:"space,omitempty"`
-	Filename string `protobuf:"bytes,3,opt,name=filename,proto3" json:"filename,omitempty"`
-}
-
-func (x *FetchJudgeFileRequest) Reset() {
-	*x = FetchJudgeFileRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[6]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchJudgeFileRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchJudgeFileRequest) ProtoMessage() {}
-
-func (x *FetchJudgeFileRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[6]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchJudgeFileRequest.ProtoReflect.Descriptor instead.
-func (*FetchJudgeFileRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{6}
-}
-
-func (x *FetchJudgeFileRequest) GetToken() string {
-	if x != nil {
-		return x.Token
-	}
-	return ""
-}
-
-func (x *FetchJudgeFileRequest) GetSpace() string {
-	if x != nil {
-		return x.Space
-	}
-	return ""
-}
-
-func (x *FetchJudgeFileRequest) GetFilename() string {
-	if x != nil {
-		return x.Filename
-	}
-	return ""
-}
-
-type FetchJudgeFileResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Status Status `protobuf:"varint,1,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
-	File   []byte `protobuf:"bytes,2,opt,name=file,proto3" json:"file,omitempty"`
-	Sha1   string `protobuf:"bytes,3,opt,name=sha1,proto3" json:"sha1,omitempty"`
-}
-
-func (x *FetchJudgeFileResponse) Reset() {
-	*x = FetchJudgeFileResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[7]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchJudgeFileResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchJudgeFileResponse) ProtoMessage() {}
-
-func (x *FetchJudgeFileResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[7]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchJudgeFileResponse.ProtoReflect.Descriptor instead.
-func (*FetchJudgeFileResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{7}
-}
-
-func (x *FetchJudgeFileResponse) GetStatus() Status {
-	if x != nil {
-		return x.Status
-	}
-	return Status_success
-}
-
-func (x *FetchJudgeFileResponse) GetFile() []byte {
-	if x != nil {
-		return x.File
-	}
-	return nil
-}
-
-func (x *FetchJudgeFileResponse) GetSha1() string {
-	if x != nil {
-		return x.Sha1
-	}
-	return ""
-}
-
-type FetchJudgementRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	TestPoint   uint64 `protobuf:"varint,1,opt,name=test_point,json=testPoint,proto3" json:"test_point,omitempty"`
-	TimeLimit   uint64 `protobuf:"varint,2,opt,name=time_limit,json=timeLimit,proto3" json:"time_limit,omitempty"`
-	MemoryLimit uint64 `protobuf:"varint,3,opt,name=memory_limit,json=memoryLimit,proto3" json:"memory_limit,omitempty"`
-}
-
-func (x *FetchJudgementRequest) Reset() {
-	*x = FetchJudgementRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[8]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchJudgementRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchJudgementRequest) ProtoMessage() {}
-
-func (x *FetchJudgementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[8]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchJudgementRequest.ProtoReflect.Descriptor instead.
-func (*FetchJudgementRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{8}
-}
-
-func (x *FetchJudgementRequest) GetTestPoint() uint64 {
-	if x != nil {
-		return x.TestPoint
-	}
-	return 0
-}
-
-func (x *FetchJudgementRequest) GetTimeLimit() uint64 {
-	if x != nil {
-		return x.TimeLimit
-	}
-	return 0
-}
-
-func (x *FetchJudgementRequest) GetMemoryLimit() uint64 {
-	if x != nil {
-		return x.MemoryLimit
-	}
-	return 0
-}
-
-type FetchJudgementResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Token            string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	TestCase         string `protobuf:"bytes,2,opt,name=test_case,json=testCase,proto3" json:"test_case,omitempty"`
-	TimeLimit        uint64 `protobuf:"varint,3,opt,name=time_limit,json=timeLimit,proto3" json:"time_limit,omitempty"`
-	MemoryLimit      uint64 `protobuf:"varint,4,opt,name=memory_limit,json=memoryLimit,proto3" json:"memory_limit,omitempty"`
-	FileIoInputName  string `protobuf:"bytes,5,opt,name=file_io_input_name,json=fileIoInputName,proto3" json:"file_io_input_name,omitempty"`
-	FileIoOutputName string `protobuf:"bytes,6,opt,name=file_io_output_name,json=fileIoOutputName,proto3" json:"file_io_output_name,omitempty"`
-}
-
-func (x *FetchJudgementResponse) Reset() {
-	*x = FetchJudgementResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[9]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *FetchJudgementResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*FetchJudgementResponse) ProtoMessage() {}
-
-func (x *FetchJudgementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[9]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use FetchJudgementResponse.ProtoReflect.Descriptor instead.
-func (*FetchJudgementResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{9}
-}
-
-func (x *FetchJudgementResponse) GetToken() string {
-	if x != nil {
-		return x.Token
-	}
-	return ""
-}
-
-func (x *FetchJudgementResponse) GetTestCase() string {
-	if x != nil {
-		return x.TestCase
-	}
-	return ""
-}
-
-func (x *FetchJudgementResponse) GetTimeLimit() uint64 {
-	if x != nil {
-		return x.TimeLimit
-	}
-	return 0
-}
-
-func (x *FetchJudgementResponse) GetMemoryLimit() uint64 {
-	if x != nil {
-		return x.MemoryLimit
-	}
-	return 0
-}
-
-func (x *FetchJudgementResponse) GetFileIoInputName() string {
-	if x != nil {
-		return x.FileIoInputName
-	}
-	return ""
-}
-
-func (x *FetchJudgementResponse) GetFileIoOutputName() string {
-	if x != nil {
-		return x.FileIoOutputName
-	}
-	return ""
-}
-
-type ReturnJudgementRequest struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Token  string `protobuf:"bytes,1,opt,name=token,proto3" json:"token,omitempty"`
-	Status Status `protobuf:"varint,2,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
-	Score  uint64 `protobuf:"varint,3,opt,name=score,proto3" json:"score,omitempty"`
-	Msg    string `protobuf:"bytes,4,opt,name=msg,proto3" json:"msg,omitempty"`
-}
-
-func (x *ReturnJudgementRequest) Reset() {
-	*x = ReturnJudgementRequest{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[10]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ReturnJudgementRequest) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ReturnJudgementRequest) ProtoMessage() {}
-
-func (x *ReturnJudgementRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[10]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ReturnJudgementRequest.ProtoReflect.Descriptor instead.
-func (*ReturnJudgementRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{10}
-}
-
-func (x *ReturnJudgementRequest) GetToken() string {
-	if x != nil {
-		return x.Token
-	}
-	return ""
-}
-
-func (x *ReturnJudgementRequest) GetStatus() Status {
-	if x != nil {
-		return x.Status
-	}
-	return Status_success
-}
-
-func (x *ReturnJudgementRequest) GetScore() uint64 {
-	if x != nil {
-		return x.Score
-	}
-	return 0
-}
-
-func (x *ReturnJudgementRequest) GetMsg() string {
-	if x != nil {
-		return x.Msg
-	}
-	return ""
-}
-
-type ReturnJudgementResponse struct {
-	state         protoimpl.MessageState
-	sizeCache     protoimpl.SizeCache
-	unknownFields protoimpl.UnknownFields
-
-	Status Status `protobuf:"varint,1,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
-}
-
-func (x *ReturnJudgementResponse) Reset() {
-	*x = ReturnJudgementResponse{}
-	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[11]
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		ms.StoreMessageInfo(mi)
-	}
-}
-
-func (x *ReturnJudgementResponse) String() string {
-	return protoimpl.X.MessageStringOf(x)
-}
-
-func (*ReturnJudgementResponse) ProtoMessage() {}
-
-func (x *ReturnJudgementResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[11]
-	if protoimpl.UnsafeEnabled && x != nil {
-		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
-		if ms.LoadMessageInfo() == nil {
-			ms.StoreMessageInfo(mi)
-		}
-		return ms
-	}
-	return mi.MessageOf(x)
-}
-
-// Deprecated: Use ReturnJudgementResponse.ProtoReflect.Descriptor instead.
-func (*ReturnJudgementResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{11}
-}
-
-func (x *ReturnJudgementResponse) GetStatus() Status {
-	if x != nil {
-		return x.Status
-	}
-	return Status_success
-}
-
 type Argument struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
@@ -788,7 +150,7 @@ type Argument struct {
 func (x *Argument) Reset() {
 	*x = Argument{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[12]
+		mi := &file_judgements_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -801,7 +163,7 @@ func (x *Argument) String() string {
 func (*Argument) ProtoMessage() {}
 
 func (x *Argument) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[12]
+	mi := &file_judgements_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -814,7 +176,7 @@ func (x *Argument) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Argument.ProtoReflect.Descriptor instead.
 func (*Argument) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{12}
+	return file_judgements_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *Argument) GetKey() string {
@@ -843,7 +205,7 @@ type Slot struct {
 func (x *Slot) Reset() {
 	*x = Slot{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[13]
+		mi := &file_judgements_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -856,7 +218,7 @@ func (x *Slot) String() string {
 func (*Slot) ProtoMessage() {}
 
 func (x *Slot) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[13]
+	mi := &file_judgements_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -869,7 +231,7 @@ func (x *Slot) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Slot.ProtoReflect.Descriptor instead.
 func (*Slot) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{13}
+	return file_judgements_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Slot) GetId() uint32 {
@@ -886,31 +248,33 @@ func (x *Slot) GetValue() []byte {
 	return nil
 }
 
-type FetchJudgementTaskRequest struct {
+type CreateJudgementRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
+	SubmissionId uint64      `protobuf:"varint,1,opt,name=submission_id,json=submissionId,proto3" json:"submission_id,omitempty"`
+	Arguments    []*Argument `protobuf:"bytes,2,rep,name=arguments,proto3" json:"arguments,omitempty"`
+	Slots        []*Slot     `protobuf:"bytes,3,rep,name=slots,proto3" json:"slots,omitempty"`
 }
 
-func (x *FetchJudgementTaskRequest) Reset() {
-	*x = FetchJudgementTaskRequest{}
+func (x *CreateJudgementRequest) Reset() {
+	*x = CreateJudgementRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[14]
+		mi := &file_judgements_proto_msgTypes[4]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *FetchJudgementTaskRequest) String() string {
+func (x *CreateJudgementRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FetchJudgementTaskRequest) ProtoMessage() {}
+func (*CreateJudgementRequest) ProtoMessage() {}
 
-func (x *FetchJudgementTaskRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[14]
+func (x *CreateJudgementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[4]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -921,19 +285,127 @@ func (x *FetchJudgementTaskRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FetchJudgementTaskRequest.ProtoReflect.Descriptor instead.
-func (*FetchJudgementTaskRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{14}
+// Deprecated: Use CreateJudgementRequest.ProtoReflect.Descriptor instead.
+func (*CreateJudgementRequest) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{4}
 }
 
-func (x *FetchJudgementTaskRequest) GetType() string {
+func (x *CreateJudgementRequest) GetSubmissionId() uint64 {
+	if x != nil {
+		return x.SubmissionId
+	}
+	return 0
+}
+
+func (x *CreateJudgementRequest) GetArguments() []*Argument {
+	if x != nil {
+		return x.Arguments
+	}
+	return nil
+}
+
+func (x *CreateJudgementRequest) GetSlots() []*Slot {
+	if x != nil {
+		return x.Slots
+	}
+	return nil
+}
+
+type CreateJudgementResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	JudgementId string `protobuf:"bytes,1,opt,name=judgement_id,json=judgementId,proto3" json:"judgement_id,omitempty"`
+}
+
+func (x *CreateJudgementResponse) Reset() {
+	*x = CreateJudgementResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_judgements_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *CreateJudgementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*CreateJudgementResponse) ProtoMessage() {}
+
+func (x *CreateJudgementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use CreateJudgementResponse.ProtoReflect.Descriptor instead.
+func (*CreateJudgementResponse) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *CreateJudgementResponse) GetJudgementId() string {
+	if x != nil {
+		return x.JudgementId
+	}
+	return ""
+}
+
+type PullJudgementRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Type string `protobuf:"bytes,1,opt,name=type,proto3" json:"type,omitempty"`
+}
+
+func (x *PullJudgementRequest) Reset() {
+	*x = PullJudgementRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_judgements_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PullJudgementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PullJudgementRequest) ProtoMessage() {}
+
+func (x *PullJudgementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PullJudgementRequest.ProtoReflect.Descriptor instead.
+func (*PullJudgementRequest) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *PullJudgementRequest) GetType() string {
 	if x != nil {
 		return x.Type
 	}
 	return ""
 }
 
-type FetchJudgementTaskResponse struct {
+type PullJudgementResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -943,23 +415,23 @@ type FetchJudgementTaskResponse struct {
 	Slots     []*Slot     `protobuf:"bytes,3,rep,name=slots,proto3" json:"slots,omitempty"`
 }
 
-func (x *FetchJudgementTaskResponse) Reset() {
-	*x = FetchJudgementTaskResponse{}
+func (x *PullJudgementResponse) Reset() {
+	*x = PullJudgementResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[15]
+		mi := &file_judgements_proto_msgTypes[7]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *FetchJudgementTaskResponse) String() string {
+func (x *PullJudgementResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*FetchJudgementTaskResponse) ProtoMessage() {}
+func (*PullJudgementResponse) ProtoMessage() {}
 
-func (x *FetchJudgementTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[15]
+func (x *PullJudgementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[7]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -970,33 +442,33 @@ func (x *FetchJudgementTaskResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use FetchJudgementTaskResponse.ProtoReflect.Descriptor instead.
-func (*FetchJudgementTaskResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{15}
+// Deprecated: Use PullJudgementResponse.ProtoReflect.Descriptor instead.
+func (*PullJudgementResponse) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{7}
 }
 
-func (x *FetchJudgementTaskResponse) GetToken() string {
+func (x *PullJudgementResponse) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
 	return ""
 }
 
-func (x *FetchJudgementTaskResponse) GetArguments() []*Argument {
+func (x *PullJudgementResponse) GetArguments() []*Argument {
 	if x != nil {
 		return x.Arguments
 	}
 	return nil
 }
 
-func (x *FetchJudgementTaskResponse) GetSlots() []*Slot {
+func (x *PullJudgementResponse) GetSlots() []*Slot {
 	if x != nil {
 		return x.Slots
 	}
 	return nil
 }
 
-type ReturnJudgementTaskRequest struct {
+type PushJudgementRequest struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1005,23 +477,23 @@ type ReturnJudgementTaskRequest struct {
 	Slots []*Slot `protobuf:"bytes,2,rep,name=slots,proto3" json:"slots,omitempty"`
 }
 
-func (x *ReturnJudgementTaskRequest) Reset() {
-	*x = ReturnJudgementTaskRequest{}
+func (x *PushJudgementRequest) Reset() {
+	*x = PushJudgementRequest{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[16]
+		mi := &file_judgements_proto_msgTypes[8]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *ReturnJudgementTaskRequest) String() string {
+func (x *PushJudgementRequest) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ReturnJudgementTaskRequest) ProtoMessage() {}
+func (*PushJudgementRequest) ProtoMessage() {}
 
-func (x *ReturnJudgementTaskRequest) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[16]
+func (x *PushJudgementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[8]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1032,26 +504,26 @@ func (x *ReturnJudgementTaskRequest) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ReturnJudgementTaskRequest.ProtoReflect.Descriptor instead.
-func (*ReturnJudgementTaskRequest) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{16}
+// Deprecated: Use PushJudgementRequest.ProtoReflect.Descriptor instead.
+func (*PushJudgementRequest) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{8}
 }
 
-func (x *ReturnJudgementTaskRequest) GetToken() string {
+func (x *PushJudgementRequest) GetToken() string {
 	if x != nil {
 		return x.Token
 	}
 	return ""
 }
 
-func (x *ReturnJudgementTaskRequest) GetSlots() []*Slot {
+func (x *PushJudgementRequest) GetSlots() []*Slot {
 	if x != nil {
 		return x.Slots
 	}
 	return nil
 }
 
-type ReturnJudgementTaskResponse struct {
+type PushJudgementResponse struct {
 	state         protoimpl.MessageState
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
@@ -1059,23 +531,23 @@ type ReturnJudgementTaskResponse struct {
 	Status Status `protobuf:"varint,1,opt,name=status,proto3,enum=Status" json:"status,omitempty"`
 }
 
-func (x *ReturnJudgementTaskResponse) Reset() {
-	*x = ReturnJudgementTaskResponse{}
+func (x *PushJudgementResponse) Reset() {
+	*x = PushJudgementResponse{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_judgements_proto_msgTypes[17]
+		mi := &file_judgements_proto_msgTypes[9]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
 }
 
-func (x *ReturnJudgementTaskResponse) String() string {
+func (x *PushJudgementResponse) String() string {
 	return protoimpl.X.MessageStringOf(x)
 }
 
-func (*ReturnJudgementTaskResponse) ProtoMessage() {}
+func (*PushJudgementResponse) ProtoMessage() {}
 
-func (x *ReturnJudgementTaskResponse) ProtoReflect() protoreflect.Message {
-	mi := &file_judgements_proto_msgTypes[17]
+func (x *PushJudgementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_judgements_proto_msgTypes[9]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -1086,12 +558,12 @@ func (x *ReturnJudgementTaskResponse) ProtoReflect() protoreflect.Message {
 	return mi.MessageOf(x)
 }
 
-// Deprecated: Use ReturnJudgementTaskResponse.ProtoReflect.Descriptor instead.
-func (*ReturnJudgementTaskResponse) Descriptor() ([]byte, []int) {
-	return file_judgements_proto_rawDescGZIP(), []int{17}
+// Deprecated: Use PushJudgementResponse.ProtoReflect.Descriptor instead.
+func (*PushJudgementResponse) Descriptor() ([]byte, []int) {
+	return file_judgements_proto_rawDescGZIP(), []int{9}
 }
 
-func (x *ReturnJudgementTaskResponse) GetStatus() Status {
+func (x *PushJudgementResponse) GetStatus() Status {
 	if x != nil {
 		return x.Status
 	}
@@ -1113,140 +585,59 @@ var file_judgements_proto_rawDesc = []byte{
 	0x0c, 0x6a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x5f, 0x69, 0x64, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x04, 0x52, 0x0b, 0x6a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64,
 	0x22, 0x0e, 0x0a, 0x0c, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x22, 0xc1, 0x01, 0x0a, 0x16, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4a, 0x75, 0x64, 0x67, 0x65,
-	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x73,
-	0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x04, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64,
-	0x12, 0x21, 0x0a, 0x0c, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x5f, 0x73, 0x70, 0x61, 0x63, 0x65,
-	0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x70, 0x75, 0x62, 0x6c, 0x69, 0x63, 0x53, 0x70,
-	0x61, 0x63, 0x65, 0x12, 0x23, 0x0a, 0x0d, 0x70, 0x72, 0x69, 0x76, 0x61, 0x74, 0x65, 0x5f, 0x73,
-	0x70, 0x61, 0x63, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x70, 0x72, 0x69, 0x76,
-	0x61, 0x74, 0x65, 0x53, 0x70, 0x61, 0x63, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x75, 0x73, 0x65, 0x72,
-	0x5f, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x09, 0x75, 0x73,
-	0x65, 0x72, 0x53, 0x70, 0x61, 0x63, 0x65, 0x12, 0x1b, 0x0a, 0x09, 0x74, 0x65, 0x73, 0x74, 0x5f,
-	0x63, 0x61, 0x73, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x65, 0x73, 0x74,
-	0x43, 0x61, 0x73, 0x65, 0x22, 0x50, 0x0a, 0x17, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4a, 0x75,
-	0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
-	0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73,
-	0x12, 0x14, 0x0a, 0x05, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52,
-	0x05, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x22, 0x51, 0x0a, 0x14, 0x46, 0x65, 0x74, 0x63, 0x68, 0x46,
-	0x69, 0x6c, 0x65, 0x48, 0x61, 0x73, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x1d,
-	0x0a, 0x0a, 0x70, 0x72, 0x6f, 0x62, 0x6c, 0x65, 0x6d, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x09, 0x52, 0x09, 0x70, 0x72, 0x6f, 0x62, 0x6c, 0x65, 0x6d, 0x49, 0x64, 0x12, 0x1a, 0x0a,
-	0x08, 0x66, 0x69, 0x6c, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x08, 0x66, 0x69, 0x6c, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x4c, 0x0a, 0x15, 0x46, 0x65, 0x74,
-	0x63, 0x68, 0x46, 0x69, 0x6c, 0x65, 0x48, 0x61, 0x73, 0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x68, 0x61, 0x31, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x04, 0x73, 0x68, 0x61, 0x31, 0x22, 0x5f, 0x0a, 0x15, 0x46, 0x65, 0x74, 0x63, 0x68,
-	0x4a, 0x75, 0x64, 0x67, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x70, 0x61, 0x63, 0x65, 0x18,
-	0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x73, 0x70, 0x61, 0x63, 0x65, 0x12, 0x1a, 0x0a, 0x08,
-	0x66, 0x69, 0x6c, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08,
-	0x66, 0x69, 0x6c, 0x65, 0x6e, 0x61, 0x6d, 0x65, 0x22, 0x61, 0x0a, 0x16, 0x46, 0x65, 0x74, 0x63,
-	0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e,
-	0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01,
-	0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61,
-	0x74, 0x75, 0x73, 0x12, 0x12, 0x0a, 0x04, 0x66, 0x69, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0c, 0x52, 0x04, 0x66, 0x69, 0x6c, 0x65, 0x12, 0x12, 0x0a, 0x04, 0x73, 0x68, 0x61, 0x31, 0x18,
-	0x03, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x73, 0x68, 0x61, 0x31, 0x22, 0x78, 0x0a, 0x15, 0x46,
-	0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71,
-	0x75, 0x65, 0x73, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x74, 0x65, 0x73, 0x74, 0x5f, 0x70, 0x6f, 0x69,
-	0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x74, 0x65, 0x73, 0x74, 0x50, 0x6f,
-	0x69, 0x6e, 0x74, 0x12, 0x1d, 0x0a, 0x0a, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x6c, 0x69, 0x6d, 0x69,
-	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x4c, 0x69, 0x6d,
-	0x69, 0x74, 0x12, 0x21, 0x0a, 0x0c, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79, 0x5f, 0x6c, 0x69, 0x6d,
-	0x69, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0b, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79,
-	0x4c, 0x69, 0x6d, 0x69, 0x74, 0x22, 0xe9, 0x01, 0x0a, 0x16, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a,
-	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x1b, 0x0a, 0x09, 0x74, 0x65, 0x73, 0x74, 0x5f, 0x63,
-	0x61, 0x73, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x08, 0x74, 0x65, 0x73, 0x74, 0x43,
-	0x61, 0x73, 0x65, 0x12, 0x1d, 0x0a, 0x0a, 0x74, 0x69, 0x6d, 0x65, 0x5f, 0x6c, 0x69, 0x6d, 0x69,
-	0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x04, 0x52, 0x09, 0x74, 0x69, 0x6d, 0x65, 0x4c, 0x69, 0x6d,
-	0x69, 0x74, 0x12, 0x21, 0x0a, 0x0c, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79, 0x5f, 0x6c, 0x69, 0x6d,
-	0x69, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x04, 0x52, 0x0b, 0x6d, 0x65, 0x6d, 0x6f, 0x72, 0x79,
-	0x4c, 0x69, 0x6d, 0x69, 0x74, 0x12, 0x2b, 0x0a, 0x12, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69, 0x6f,
-	0x5f, 0x69, 0x6e, 0x70, 0x75, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x0f, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6f, 0x49, 0x6e, 0x70, 0x75, 0x74, 0x4e, 0x61,
-	0x6d, 0x65, 0x12, 0x2d, 0x0a, 0x13, 0x66, 0x69, 0x6c, 0x65, 0x5f, 0x69, 0x6f, 0x5f, 0x6f, 0x75,
-	0x74, 0x70, 0x75, 0x74, 0x5f, 0x6e, 0x61, 0x6d, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x10, 0x66, 0x69, 0x6c, 0x65, 0x49, 0x6f, 0x4f, 0x75, 0x74, 0x70, 0x75, 0x74, 0x4e, 0x61, 0x6d,
-	0x65, 0x22, 0x77, 0x0a, 0x16, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65,
-	0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x14, 0x0a, 0x05, 0x74,
+	0x22, 0x32, 0x0a, 0x08, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03,
+	0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14,
+	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x22, 0x2c, 0x0a, 0x04, 0x53, 0x6c, 0x6f, 0x74, 0x12, 0x0e, 0x0a, 0x02,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02, 0x69, 0x64, 0x12, 0x14, 0x0a, 0x05,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x22, 0x83, 0x01, 0x0a, 0x16, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4a, 0x75, 0x64,
+	0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a,
+	0x0d, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x04, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
+	0x49, 0x64, 0x12, 0x27, 0x0a, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18,
+	0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74,
+	0x52, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x1b, 0x0a, 0x05, 0x73,
+	0x6c, 0x6f, 0x74, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x53, 0x6c, 0x6f,
+	0x74, 0x52, 0x05, 0x73, 0x6c, 0x6f, 0x74, 0x73, 0x22, 0x3c, 0x0a, 0x17, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x12, 0x21, 0x0a, 0x0c, 0x6a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74,
+	0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b, 0x6a, 0x75, 0x64, 0x67, 0x65,
+	0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x22, 0x2a, 0x0a, 0x14, 0x50, 0x75, 0x6c, 0x6c, 0x4a, 0x75,
+	0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12,
+	0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79,
+	0x70, 0x65, 0x22, 0x73, 0x0a, 0x15, 0x50, 0x75, 0x6c, 0x6c, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74,
 	0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65,
-	0x6e, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74,
-	0x75, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28,
-	0x04, 0x52, 0x05, 0x73, 0x63, 0x6f, 0x72, 0x65, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18,
-	0x04, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x3a, 0x0a, 0x17, 0x52, 0x65,
-	0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73,
-	0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18,
-	0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06,
-	0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x32, 0x0a, 0x08, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65,
-	0x6e, 0x74, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
-	0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x2c, 0x0a, 0x04, 0x53, 0x6c,
-	0x6f, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x02,
-	0x69, 0x64, 0x12, 0x14, 0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28,
-	0x0c, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x22, 0x2f, 0x0a, 0x19, 0x46, 0x65, 0x74, 0x63,
-	0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65,
-	0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x12, 0x0a, 0x04, 0x74, 0x79, 0x70, 0x65, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x09, 0x52, 0x04, 0x74, 0x79, 0x70, 0x65, 0x22, 0x78, 0x0a, 0x1a, 0x46, 0x65, 0x74,
-	0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e,
-	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x27, 0x0a,
-	0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0b,
-	0x32, 0x09, 0x2e, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x09, 0x61, 0x72, 0x67,
-	0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x1b, 0x0a, 0x05, 0x73, 0x6c, 0x6f, 0x74, 0x73, 0x18,
-	0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x53, 0x6c, 0x6f, 0x74, 0x52, 0x05, 0x73, 0x6c,
-	0x6f, 0x74, 0x73, 0x22, 0x4f, 0x0a, 0x1a, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64,
-	0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x12, 0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
-	0x52, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x1b, 0x0a, 0x05, 0x73, 0x6c, 0x6f, 0x74, 0x73,
-	0x18, 0x02, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x53, 0x6c, 0x6f, 0x74, 0x52, 0x05, 0x73,
-	0x6c, 0x6f, 0x74, 0x73, 0x22, 0x3e, 0x0a, 0x1b, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75,
-	0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f,
-	0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20,
-	0x01, 0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74,
-	0x61, 0x74, 0x75, 0x73, 0x32, 0xa9, 0x04, 0x0a, 0x0a, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x73, 0x12, 0x44, 0x0a, 0x0f, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4a, 0x75, 0x64,
-	0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x17, 0x2e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4a,
-	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a,
-	0x18, 0x2e, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x74, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e, 0x0a, 0x0d, 0x46, 0x65, 0x74,
-	0x63, 0x68, 0x48, 0x61, 0x73, 0x68, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x15, 0x2e, 0x46, 0x65, 0x74,
-	0x63, 0x68, 0x46, 0x69, 0x6c, 0x65, 0x48, 0x61, 0x73, 0x68, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x16, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x46, 0x69, 0x6c, 0x65, 0x48, 0x61, 0x73,
-	0x68, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3c, 0x0a, 0x09, 0x46, 0x65, 0x74,
-	0x63, 0x68, 0x46, 0x69, 0x6c, 0x65, 0x12, 0x16, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75,
-	0x64, 0x67, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x17,
-	0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x46, 0x69, 0x6c, 0x65, 0x52,
-	0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x41, 0x0a, 0x0e, 0x46, 0x65, 0x74, 0x63, 0x68,
-	0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x16, 0x2e, 0x46, 0x65, 0x74, 0x63,
-	0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x17, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0f, 0x52, 0x65,
-	0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x17, 0x2e,
-	0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a,
+	0x6e, 0x12, 0x27, 0x0a, 0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x09, 0x2e, 0x41, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x09, 0x61, 0x72, 0x67, 0x75, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x1b, 0x0a, 0x05, 0x73, 0x6c,
+	0x6f, 0x74, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x53, 0x6c, 0x6f, 0x74,
+	0x52, 0x05, 0x73, 0x6c, 0x6f, 0x74, 0x73, 0x22, 0x49, 0x0a, 0x14, 0x50, 0x75, 0x73, 0x68, 0x4a,
+	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12,
+	0x14, 0x0a, 0x05, 0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05,
+	0x74, 0x6f, 0x6b, 0x65, 0x6e, 0x12, 0x1b, 0x0a, 0x05, 0x73, 0x6c, 0x6f, 0x74, 0x73, 0x18, 0x02,
+	0x20, 0x03, 0x28, 0x0b, 0x32, 0x05, 0x2e, 0x53, 0x6c, 0x6f, 0x74, 0x52, 0x05, 0x73, 0x6c, 0x6f,
+	0x74, 0x73, 0x22, 0x38, 0x0a, 0x15, 0x50, 0x75, 0x73, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73,
+	0x74, 0x61, 0x74, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74,
+	0x61, 0x74, 0x75, 0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x32, 0x81, 0x02, 0x0a,
+	0x0a, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x2d, 0x0a, 0x0e, 0x4c,
+	0x69, 0x73, 0x74, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x73, 0x12, 0x0c, 0x2e,
+	0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x0d, 0x2e, 0x4c, 0x69,
+	0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44, 0x0a, 0x0f, 0x43, 0x72,
+	0x65, 0x61, 0x74, 0x65, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x17, 0x2e,
+	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x4a,
 	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
-	0x12, 0x2d, 0x0a, 0x0e, 0x4c, 0x69, 0x73, 0x74, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x73, 0x12, 0x0c, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74,
-	0x1a, 0x0d, 0x2e, 0x4c, 0x69, 0x73, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12,
-	0x4d, 0x0a, 0x12, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x1a, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64,
-	0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
-	0x74, 0x1a, 0x1b, 0x2e, 0x46, 0x65, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65,
-	0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x50,
-	0x0a, 0x13, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
-	0x74, 0x54, 0x61, 0x73, 0x6b, 0x12, 0x1b, 0x2e, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75,
-	0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x71, 0x75, 0x65,
-	0x73, 0x74, 0x1a, 0x1c, 0x2e, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65,
-	0x6d, 0x65, 0x6e, 0x74, 0x54, 0x61, 0x73, 0x6b, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x3e, 0x0a, 0x0d, 0x50, 0x75, 0x6c, 0x6c, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x12, 0x15, 0x2e, 0x50, 0x75, 0x6c, 0x6c, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x50, 0x75, 0x6c, 0x6c, 0x4a,
+	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
+	0x12, 0x3e, 0x0a, 0x0d, 0x50, 0x75, 0x73, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x12, 0x15, 0x2e, 0x50, 0x75, 0x73, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x50, 0x75, 0x73, 0x68, 0x4a,
+	0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65,
 	0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x3b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x5f, 0x73,
 	0x70, 0x65, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
@@ -1263,59 +654,40 @@ func file_judgements_proto_rawDescGZIP() []byte {
 	return file_judgements_proto_rawDescData
 }
 
-var file_judgements_proto_msgTypes = make([]protoimpl.MessageInfo, 18)
+var file_judgements_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_judgements_proto_goTypes = []interface{}{
-	(*ListRequest)(nil),                 // 0: ListRequest
-	(*ListResponse)(nil),                // 1: ListResponse
-	(*SubmitJudgementRequest)(nil),      // 2: SubmitJudgementRequest
-	(*SubmitJudgementResponse)(nil),     // 3: SubmitJudgementResponse
-	(*FetchFileHashRequest)(nil),        // 4: FetchFileHashRequest
-	(*FetchFileHashResponse)(nil),       // 5: FetchFileHashResponse
-	(*FetchJudgeFileRequest)(nil),       // 6: FetchJudgeFileRequest
-	(*FetchJudgeFileResponse)(nil),      // 7: FetchJudgeFileResponse
-	(*FetchJudgementRequest)(nil),       // 8: FetchJudgementRequest
-	(*FetchJudgementResponse)(nil),      // 9: FetchJudgementResponse
-	(*ReturnJudgementRequest)(nil),      // 10: ReturnJudgementRequest
-	(*ReturnJudgementResponse)(nil),     // 11: ReturnJudgementResponse
-	(*Argument)(nil),                    // 12: Argument
-	(*Slot)(nil),                        // 13: Slot
-	(*FetchJudgementTaskRequest)(nil),   // 14: FetchJudgementTaskRequest
-	(*FetchJudgementTaskResponse)(nil),  // 15: FetchJudgementTaskResponse
-	(*ReturnJudgementTaskRequest)(nil),  // 16: ReturnJudgementTaskRequest
-	(*ReturnJudgementTaskResponse)(nil), // 17: ReturnJudgementTaskResponse
-	(Status)(0),                         // 18: Status
+	(*ListRequest)(nil),             // 0: ListRequest
+	(*ListResponse)(nil),            // 1: ListResponse
+	(*Argument)(nil),                // 2: Argument
+	(*Slot)(nil),                    // 3: Slot
+	(*CreateJudgementRequest)(nil),  // 4: CreateJudgementRequest
+	(*CreateJudgementResponse)(nil), // 5: CreateJudgementResponse
+	(*PullJudgementRequest)(nil),    // 6: PullJudgementRequest
+	(*PullJudgementResponse)(nil),   // 7: PullJudgementResponse
+	(*PushJudgementRequest)(nil),    // 8: PushJudgementRequest
+	(*PushJudgementResponse)(nil),   // 9: PushJudgementResponse
+	(Status)(0),                     // 10: Status
 }
 var file_judgements_proto_depIdxs = []int32{
-	18, // 0: SubmitJudgementResponse.status:type_name -> Status
-	18, // 1: FetchFileHashResponse.status:type_name -> Status
-	18, // 2: FetchJudgeFileResponse.status:type_name -> Status
-	18, // 3: ReturnJudgementRequest.status:type_name -> Status
-	18, // 4: ReturnJudgementResponse.status:type_name -> Status
-	12, // 5: FetchJudgementTaskResponse.arguments:type_name -> Argument
-	13, // 6: FetchJudgementTaskResponse.slots:type_name -> Slot
-	13, // 7: ReturnJudgementTaskRequest.slots:type_name -> Slot
-	18, // 8: ReturnJudgementTaskResponse.status:type_name -> Status
-	2,  // 9: Judgements.SubmitJudgement:input_type -> SubmitJudgementRequest
-	4,  // 10: Judgements.FetchHashFile:input_type -> FetchFileHashRequest
-	6,  // 11: Judgements.FetchFile:input_type -> FetchJudgeFileRequest
-	8,  // 12: Judgements.FetchJudgement:input_type -> FetchJudgementRequest
-	10, // 13: Judgements.ReturnJudgement:input_type -> ReturnJudgementRequest
-	0,  // 14: Judgements.ListJudgements:input_type -> ListRequest
-	14, // 15: Judgements.FetchJudgementTask:input_type -> FetchJudgementTaskRequest
-	16, // 16: Judgements.ReturnJudgementTask:input_type -> ReturnJudgementTaskRequest
-	3,  // 17: Judgements.SubmitJudgement:output_type -> SubmitJudgementResponse
-	5,  // 18: Judgements.FetchHashFile:output_type -> FetchFileHashResponse
-	7,  // 19: Judgements.FetchFile:output_type -> FetchJudgeFileResponse
-	9,  // 20: Judgements.FetchJudgement:output_type -> FetchJudgementResponse
-	11, // 21: Judgements.ReturnJudgement:output_type -> ReturnJudgementResponse
-	1,  // 22: Judgements.ListJudgements:output_type -> ListResponse
-	15, // 23: Judgements.FetchJudgementTask:output_type -> FetchJudgementTaskResponse
-	17, // 24: Judgements.ReturnJudgementTask:output_type -> ReturnJudgementTaskResponse
-	17, // [17:25] is the sub-list for method output_type
-	9,  // [9:17] is the sub-list for method input_type
-	9,  // [9:9] is the sub-list for extension type_name
-	9,  // [9:9] is the sub-list for extension extendee
-	0,  // [0:9] is the sub-list for field type_name
+	2,  // 0: CreateJudgementRequest.arguments:type_name -> Argument
+	3,  // 1: CreateJudgementRequest.slots:type_name -> Slot
+	2,  // 2: PullJudgementResponse.arguments:type_name -> Argument
+	3,  // 3: PullJudgementResponse.slots:type_name -> Slot
+	3,  // 4: PushJudgementRequest.slots:type_name -> Slot
+	10, // 5: PushJudgementResponse.status:type_name -> Status
+	0,  // 6: Judgements.ListJudgements:input_type -> ListRequest
+	4,  // 7: Judgements.CreateJudgement:input_type -> CreateJudgementRequest
+	6,  // 8: Judgements.PullJudgement:input_type -> PullJudgementRequest
+	8,  // 9: Judgements.PushJudgement:input_type -> PushJudgementRequest
+	1,  // 10: Judgements.ListJudgements:output_type -> ListResponse
+	5,  // 11: Judgements.CreateJudgement:output_type -> CreateJudgementResponse
+	7,  // 12: Judgements.PullJudgement:output_type -> PullJudgementResponse
+	9,  // 13: Judgements.PushJudgement:output_type -> PushJudgementResponse
+	10, // [10:14] is the sub-list for method output_type
+	6,  // [6:10] is the sub-list for method input_type
+	6,  // [6:6] is the sub-list for extension type_name
+	6,  // [6:6] is the sub-list for extension extendee
+	0,  // [0:6] is the sub-list for field type_name
 }
 
 func init() { file_judgements_proto_init() }
@@ -1350,126 +722,6 @@ func file_judgements_proto_init() {
 			}
 		}
 		file_judgements_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubmitJudgementRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*SubmitJudgementResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchFileHashRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchFileHashResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgeFileRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgeFileResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgementRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgementResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[10].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReturnJudgementRequest); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[11].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReturnJudgementResponse); i {
-			case 0:
-				return &v.state
-			case 1:
-				return &v.sizeCache
-			case 2:
-				return &v.unknownFields
-			default:
-				return nil
-			}
-		}
-		file_judgements_proto_msgTypes[12].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Argument); i {
 			case 0:
 				return &v.state
@@ -1481,7 +733,7 @@ func file_judgements_proto_init() {
 				return nil
 			}
 		}
-		file_judgements_proto_msgTypes[13].Exporter = func(v interface{}, i int) interface{} {
+		file_judgements_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*Slot); i {
 			case 0:
 				return &v.state
@@ -1493,8 +745,8 @@ func file_judgements_proto_init() {
 				return nil
 			}
 		}
-		file_judgements_proto_msgTypes[14].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgementTaskRequest); i {
+		file_judgements_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateJudgementRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1505,8 +757,8 @@ func file_judgements_proto_init() {
 				return nil
 			}
 		}
-		file_judgements_proto_msgTypes[15].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*FetchJudgementTaskResponse); i {
+		file_judgements_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*CreateJudgementResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1517,8 +769,8 @@ func file_judgements_proto_init() {
 				return nil
 			}
 		}
-		file_judgements_proto_msgTypes[16].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReturnJudgementTaskRequest); i {
+		file_judgements_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PullJudgementRequest); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1529,8 +781,32 @@ func file_judgements_proto_init() {
 				return nil
 			}
 		}
-		file_judgements_proto_msgTypes[17].Exporter = func(v interface{}, i int) interface{} {
-			switch v := v.(*ReturnJudgementTaskResponse); i {
+		file_judgements_proto_msgTypes[7].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PullJudgementResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_judgements_proto_msgTypes[8].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PushJudgementRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_judgements_proto_msgTypes[9].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PushJudgementResponse); i {
 			case 0:
 				return &v.state
 			case 1:
@@ -1548,7 +824,7 @@ func file_judgements_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_judgements_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   18,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -1574,14 +850,10 @@ const _ = grpc.SupportPackageIsVersion6
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type JudgementsClient interface {
-	SubmitJudgement(ctx context.Context, in *SubmitJudgementRequest, opts ...grpc.CallOption) (*SubmitJudgementResponse, error)
-	FetchHashFile(ctx context.Context, in *FetchFileHashRequest, opts ...grpc.CallOption) (*FetchFileHashResponse, error)
-	FetchFile(ctx context.Context, in *FetchJudgeFileRequest, opts ...grpc.CallOption) (*FetchJudgeFileResponse, error)
-	FetchJudgement(ctx context.Context, in *FetchJudgementRequest, opts ...grpc.CallOption) (*FetchJudgementResponse, error)
-	ReturnJudgement(ctx context.Context, in *ReturnJudgementRequest, opts ...grpc.CallOption) (*ReturnJudgementResponse, error)
 	ListJudgements(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error)
-	FetchJudgementTask(ctx context.Context, in *FetchJudgementTaskRequest, opts ...grpc.CallOption) (*FetchJudgementTaskResponse, error)
-	ReturnJudgementTask(ctx context.Context, in *ReturnJudgementTaskRequest, opts ...grpc.CallOption) (*ReturnJudgementTaskResponse, error)
+	CreateJudgement(ctx context.Context, in *CreateJudgementRequest, opts ...grpc.CallOption) (*CreateJudgementResponse, error)
+	PullJudgement(ctx context.Context, in *PullJudgementRequest, opts ...grpc.CallOption) (*PullJudgementResponse, error)
+	PushJudgement(ctx context.Context, in *PushJudgementRequest, opts ...grpc.CallOption) (*PushJudgementResponse, error)
 }
 
 type judgementsClient struct {
@@ -1590,51 +862,6 @@ type judgementsClient struct {
 
 func NewJudgementsClient(cc grpc.ClientConnInterface) JudgementsClient {
 	return &judgementsClient{cc}
-}
-
-func (c *judgementsClient) SubmitJudgement(ctx context.Context, in *SubmitJudgementRequest, opts ...grpc.CallOption) (*SubmitJudgementResponse, error) {
-	out := new(SubmitJudgementResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/SubmitJudgement", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *judgementsClient) FetchHashFile(ctx context.Context, in *FetchFileHashRequest, opts ...grpc.CallOption) (*FetchFileHashResponse, error) {
-	out := new(FetchFileHashResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/FetchHashFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *judgementsClient) FetchFile(ctx context.Context, in *FetchJudgeFileRequest, opts ...grpc.CallOption) (*FetchJudgeFileResponse, error) {
-	out := new(FetchJudgeFileResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/FetchFile", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *judgementsClient) FetchJudgement(ctx context.Context, in *FetchJudgementRequest, opts ...grpc.CallOption) (*FetchJudgementResponse, error) {
-	out := new(FetchJudgementResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/FetchJudgement", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
-}
-
-func (c *judgementsClient) ReturnJudgement(ctx context.Context, in *ReturnJudgementRequest, opts ...grpc.CallOption) (*ReturnJudgementResponse, error) {
-	out := new(ReturnJudgementResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/ReturnJudgement", in, out, opts...)
-	if err != nil {
-		return nil, err
-	}
-	return out, nil
 }
 
 func (c *judgementsClient) ListJudgements(ctx context.Context, in *ListRequest, opts ...grpc.CallOption) (*ListResponse, error) {
@@ -1646,18 +873,27 @@ func (c *judgementsClient) ListJudgements(ctx context.Context, in *ListRequest, 
 	return out, nil
 }
 
-func (c *judgementsClient) FetchJudgementTask(ctx context.Context, in *FetchJudgementTaskRequest, opts ...grpc.CallOption) (*FetchJudgementTaskResponse, error) {
-	out := new(FetchJudgementTaskResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/FetchJudgementTask", in, out, opts...)
+func (c *judgementsClient) CreateJudgement(ctx context.Context, in *CreateJudgementRequest, opts ...grpc.CallOption) (*CreateJudgementResponse, error) {
+	out := new(CreateJudgementResponse)
+	err := c.cc.Invoke(ctx, "/Judgements/CreateJudgement", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *judgementsClient) ReturnJudgementTask(ctx context.Context, in *ReturnJudgementTaskRequest, opts ...grpc.CallOption) (*ReturnJudgementTaskResponse, error) {
-	out := new(ReturnJudgementTaskResponse)
-	err := c.cc.Invoke(ctx, "/Judgements/ReturnJudgementTask", in, out, opts...)
+func (c *judgementsClient) PullJudgement(ctx context.Context, in *PullJudgementRequest, opts ...grpc.CallOption) (*PullJudgementResponse, error) {
+	out := new(PullJudgementResponse)
+	err := c.cc.Invoke(ctx, "/Judgements/PullJudgement", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *judgementsClient) PushJudgement(ctx context.Context, in *PushJudgementRequest, opts ...grpc.CallOption) (*PushJudgementResponse, error) {
+	out := new(PushJudgementResponse)
+	err := c.cc.Invoke(ctx, "/Judgements/PushJudgement", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -1666,137 +902,31 @@ func (c *judgementsClient) ReturnJudgementTask(ctx context.Context, in *ReturnJu
 
 // JudgementsServer is the server API for Judgements service.
 type JudgementsServer interface {
-	SubmitJudgement(context.Context, *SubmitJudgementRequest) (*SubmitJudgementResponse, error)
-	FetchHashFile(context.Context, *FetchFileHashRequest) (*FetchFileHashResponse, error)
-	FetchFile(context.Context, *FetchJudgeFileRequest) (*FetchJudgeFileResponse, error)
-	FetchJudgement(context.Context, *FetchJudgementRequest) (*FetchJudgementResponse, error)
-	ReturnJudgement(context.Context, *ReturnJudgementRequest) (*ReturnJudgementResponse, error)
 	ListJudgements(context.Context, *ListRequest) (*ListResponse, error)
-	FetchJudgementTask(context.Context, *FetchJudgementTaskRequest) (*FetchJudgementTaskResponse, error)
-	ReturnJudgementTask(context.Context, *ReturnJudgementTaskRequest) (*ReturnJudgementTaskResponse, error)
+	CreateJudgement(context.Context, *CreateJudgementRequest) (*CreateJudgementResponse, error)
+	PullJudgement(context.Context, *PullJudgementRequest) (*PullJudgementResponse, error)
+	PushJudgement(context.Context, *PushJudgementRequest) (*PushJudgementResponse, error)
 }
 
 // UnimplementedJudgementsServer can be embedded to have forward compatible implementations.
 type UnimplementedJudgementsServer struct {
 }
 
-func (*UnimplementedJudgementsServer) SubmitJudgement(context.Context, *SubmitJudgementRequest) (*SubmitJudgementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method SubmitJudgement not implemented")
-}
-func (*UnimplementedJudgementsServer) FetchHashFile(context.Context, *FetchFileHashRequest) (*FetchFileHashResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FetchHashFile not implemented")
-}
-func (*UnimplementedJudgementsServer) FetchFile(context.Context, *FetchJudgeFileRequest) (*FetchJudgeFileResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FetchFile not implemented")
-}
-func (*UnimplementedJudgementsServer) FetchJudgement(context.Context, *FetchJudgementRequest) (*FetchJudgementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FetchJudgement not implemented")
-}
-func (*UnimplementedJudgementsServer) ReturnJudgement(context.Context, *ReturnJudgementRequest) (*ReturnJudgementResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReturnJudgement not implemented")
-}
 func (*UnimplementedJudgementsServer) ListJudgements(context.Context, *ListRequest) (*ListResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method ListJudgements not implemented")
 }
-func (*UnimplementedJudgementsServer) FetchJudgementTask(context.Context, *FetchJudgementTaskRequest) (*FetchJudgementTaskResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method FetchJudgementTask not implemented")
+func (*UnimplementedJudgementsServer) CreateJudgement(context.Context, *CreateJudgementRequest) (*CreateJudgementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method CreateJudgement not implemented")
 }
-func (*UnimplementedJudgementsServer) ReturnJudgementTask(context.Context, *ReturnJudgementTaskRequest) (*ReturnJudgementTaskResponse, error) {
-	return nil, status.Errorf(codes.Unimplemented, "method ReturnJudgementTask not implemented")
+func (*UnimplementedJudgementsServer) PullJudgement(context.Context, *PullJudgementRequest) (*PullJudgementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PullJudgement not implemented")
+}
+func (*UnimplementedJudgementsServer) PushJudgement(context.Context, *PushJudgementRequest) (*PushJudgementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method PushJudgement not implemented")
 }
 
 func RegisterJudgementsServer(s *grpc.Server, srv JudgementsServer) {
 	s.RegisterService(&_Judgements_serviceDesc, srv)
-}
-
-func _Judgements_SubmitJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(SubmitJudgementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JudgementsServer).SubmitJudgement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/Judgements/SubmitJudgement",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).SubmitJudgement(ctx, req.(*SubmitJudgementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Judgements_FetchHashFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FetchFileHashRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JudgementsServer).FetchHashFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/Judgements/FetchHashFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).FetchHashFile(ctx, req.(*FetchFileHashRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Judgements_FetchFile_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FetchJudgeFileRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JudgementsServer).FetchFile(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/Judgements/FetchFile",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).FetchFile(ctx, req.(*FetchJudgeFileRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Judgements_FetchJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FetchJudgementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JudgementsServer).FetchJudgement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/Judgements/FetchJudgement",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).FetchJudgement(ctx, req.(*FetchJudgementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
-}
-
-func _Judgements_ReturnJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReturnJudgementRequest)
-	if err := dec(in); err != nil {
-		return nil, err
-	}
-	if interceptor == nil {
-		return srv.(JudgementsServer).ReturnJudgement(ctx, in)
-	}
-	info := &grpc.UnaryServerInfo{
-		Server:     srv,
-		FullMethod: "/Judgements/ReturnJudgement",
-	}
-	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).ReturnJudgement(ctx, req.(*ReturnJudgementRequest))
-	}
-	return interceptor(ctx, in, info, handler)
 }
 
 func _Judgements_ListJudgements_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
@@ -1817,38 +947,56 @@ func _Judgements_ListJudgements_Handler(srv interface{}, ctx context.Context, de
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Judgements_FetchJudgementTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(FetchJudgementTaskRequest)
+func _Judgements_CreateJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(CreateJudgementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JudgementsServer).FetchJudgementTask(ctx, in)
+		return srv.(JudgementsServer).CreateJudgement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Judgements/FetchJudgementTask",
+		FullMethod: "/Judgements/CreateJudgement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).FetchJudgementTask(ctx, req.(*FetchJudgementTaskRequest))
+		return srv.(JudgementsServer).CreateJudgement(ctx, req.(*CreateJudgementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
 
-func _Judgements_ReturnJudgementTask_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
-	in := new(ReturnJudgementTaskRequest)
+func _Judgements_PullJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PullJudgementRequest)
 	if err := dec(in); err != nil {
 		return nil, err
 	}
 	if interceptor == nil {
-		return srv.(JudgementsServer).ReturnJudgementTask(ctx, in)
+		return srv.(JudgementsServer).PullJudgement(ctx, in)
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/Judgements/ReturnJudgementTask",
+		FullMethod: "/Judgements/PullJudgement",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
-		return srv.(JudgementsServer).ReturnJudgementTask(ctx, req.(*ReturnJudgementTaskRequest))
+		return srv.(JudgementsServer).PullJudgement(ctx, req.(*PullJudgementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Judgements_PushJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(PushJudgementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(JudgementsServer).PushJudgement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Judgements/PushJudgement",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(JudgementsServer).PushJudgement(ctx, req.(*PushJudgementRequest))
 	}
 	return interceptor(ctx, in, info, handler)
 }
@@ -1858,36 +1006,20 @@ var _Judgements_serviceDesc = grpc.ServiceDesc{
 	HandlerType: (*JudgementsServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
-			MethodName: "SubmitJudgement",
-			Handler:    _Judgements_SubmitJudgement_Handler,
-		},
-		{
-			MethodName: "FetchHashFile",
-			Handler:    _Judgements_FetchHashFile_Handler,
-		},
-		{
-			MethodName: "FetchFile",
-			Handler:    _Judgements_FetchFile_Handler,
-		},
-		{
-			MethodName: "FetchJudgement",
-			Handler:    _Judgements_FetchJudgement_Handler,
-		},
-		{
-			MethodName: "ReturnJudgement",
-			Handler:    _Judgements_ReturnJudgement_Handler,
-		},
-		{
 			MethodName: "ListJudgements",
 			Handler:    _Judgements_ListJudgements_Handler,
 		},
 		{
-			MethodName: "FetchJudgementTask",
-			Handler:    _Judgements_FetchJudgementTask_Handler,
+			MethodName: "CreateJudgement",
+			Handler:    _Judgements_CreateJudgement_Handler,
 		},
 		{
-			MethodName: "ReturnJudgementTask",
-			Handler:    _Judgements_ReturnJudgementTask_Handler,
+			MethodName: "PullJudgement",
+			Handler:    _Judgements_PullJudgement_Handler,
+		},
+		{
+			MethodName: "PushJudgement",
+			Handler:    _Judgements_PushJudgement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

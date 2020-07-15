@@ -6,6 +6,10 @@ option go_package = ".;protobuf_spec";
 
 service Submissions {
     rpc CreateSubmission (CreateSubmissionRequest) returns (CreateSubmissionResponse);
+
+    rpc DispatchJudge (DispatchJudgeRequest) returns (DispatchJudgeResponse);
+    
+    rpc ReturnJudgement (ReturnJudgementRequest) returns (ReturnJudgementResponse);
 }
 
 
@@ -17,4 +21,21 @@ message CreateSubmissionRequest {
 
 message CreateSubmissionResponse {
     Status status = 1;
+}
+
+message DispatchJudgeRequest {
+    string submission_id = 1;
+}
+
+message DispatchJudgeResponse {
+
+}
+
+message ReturnJudgementRequest {
+    string submission_id = 1;
+}
+
+message ReturnJudgementResponse {
+    string judgementId = 1;
+    repeated bytes outputs = 2;
 }

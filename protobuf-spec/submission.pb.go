@@ -139,6 +139,193 @@ func (x *CreateSubmissionResponse) GetStatus() Status {
 	return Status_success
 }
 
+type DispatchJudgeRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SubmissionId string `protobuf:"bytes,1,opt,name=submission_id,json=submissionId,proto3" json:"submission_id,omitempty"`
+}
+
+func (x *DispatchJudgeRequest) Reset() {
+	*x = DispatchJudgeRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_submission_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DispatchJudgeRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DispatchJudgeRequest) ProtoMessage() {}
+
+func (x *DispatchJudgeRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_submission_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DispatchJudgeRequest.ProtoReflect.Descriptor instead.
+func (*DispatchJudgeRequest) Descriptor() ([]byte, []int) {
+	return file_submission_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *DispatchJudgeRequest) GetSubmissionId() string {
+	if x != nil {
+		return x.SubmissionId
+	}
+	return ""
+}
+
+type DispatchJudgeResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *DispatchJudgeResponse) Reset() {
+	*x = DispatchJudgeResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_submission_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *DispatchJudgeResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DispatchJudgeResponse) ProtoMessage() {}
+
+func (x *DispatchJudgeResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_submission_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DispatchJudgeResponse.ProtoReflect.Descriptor instead.
+func (*DispatchJudgeResponse) Descriptor() ([]byte, []int) {
+	return file_submission_proto_rawDescGZIP(), []int{3}
+}
+
+type ReturnJudgementRequest struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	SubmissionId string `protobuf:"bytes,1,opt,name=submission_id,json=submissionId,proto3" json:"submission_id,omitempty"`
+}
+
+func (x *ReturnJudgementRequest) Reset() {
+	*x = ReturnJudgementRequest{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_submission_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReturnJudgementRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReturnJudgementRequest) ProtoMessage() {}
+
+func (x *ReturnJudgementRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_submission_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReturnJudgementRequest.ProtoReflect.Descriptor instead.
+func (*ReturnJudgementRequest) Descriptor() ([]byte, []int) {
+	return file_submission_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ReturnJudgementRequest) GetSubmissionId() string {
+	if x != nil {
+		return x.SubmissionId
+	}
+	return ""
+}
+
+type ReturnJudgementResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	JudgementId string   `protobuf:"bytes,1,opt,name=judgementId,proto3" json:"judgementId,omitempty"`
+	Outputs     [][]byte `protobuf:"bytes,2,rep,name=outputs,proto3" json:"outputs,omitempty"`
+}
+
+func (x *ReturnJudgementResponse) Reset() {
+	*x = ReturnJudgementResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_submission_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *ReturnJudgementResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ReturnJudgementResponse) ProtoMessage() {}
+
+func (x *ReturnJudgementResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_submission_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ReturnJudgementResponse.ProtoReflect.Descriptor instead.
+func (*ReturnJudgementResponse) Descriptor() ([]byte, []int) {
+	return file_submission_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ReturnJudgementResponse) GetJudgementId() string {
+	if x != nil {
+		return x.JudgementId
+	}
+	return ""
+}
+
+func (x *ReturnJudgementResponse) GetOutputs() [][]byte {
+	if x != nil {
+		return x.Outputs
+	}
+	return nil
+}
+
 var File_submission_proto protoreflect.FileDescriptor
 
 var file_submission_proto_rawDesc = []byte{
@@ -155,14 +342,37 @@ var file_submission_proto_rawDesc = []byte{
 	0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e,
 	0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x1f, 0x0a, 0x06, 0x73, 0x74, 0x61, 0x74,
 	0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x07, 0x2e, 0x53, 0x74, 0x61, 0x74, 0x75,
-	0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x32, 0x56, 0x0a, 0x0b, 0x53, 0x75, 0x62,
-	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x47, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61,
-	0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x2e, 0x43,
-	0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52,
-	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53,
-	0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73,
-	0x65, 0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x3b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x5f,
-	0x73, 0x70, 0x65, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x73, 0x52, 0x06, 0x73, 0x74, 0x61, 0x74, 0x75, 0x73, 0x22, 0x3b, 0x0a, 0x14, 0x44, 0x69, 0x73,
+	0x70, 0x61, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73,
+	0x74, 0x12, 0x23, 0x0a, 0x0d, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f,
+	0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0c, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x17, 0x0a, 0x15, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74,
+	0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x22,
+	0x3d, 0x0a, 0x16, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65,
+	0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x12, 0x23, 0x0a, 0x0d, 0x73, 0x75, 0x62,
+	0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x5f, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09,
+	0x52, 0x0c, 0x73, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x49, 0x64, 0x22, 0x55,
+	0x0a, 0x17, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x20, 0x0a, 0x0b, 0x6a, 0x75, 0x64,
+	0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x0b,
+	0x6a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x49, 0x64, 0x12, 0x18, 0x0a, 0x07, 0x6f,
+	0x75, 0x74, 0x70, 0x75, 0x74, 0x73, 0x18, 0x02, 0x20, 0x03, 0x28, 0x0c, 0x52, 0x07, 0x6f, 0x75,
+	0x74, 0x70, 0x75, 0x74, 0x73, 0x32, 0xdc, 0x01, 0x0a, 0x0b, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73,
+	0x73, 0x69, 0x6f, 0x6e, 0x73, 0x12, 0x47, 0x0a, 0x10, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53,
+	0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x12, 0x18, 0x2e, 0x43, 0x72, 0x65, 0x61,
+	0x74, 0x65, 0x53, 0x75, 0x62, 0x6d, 0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x71, 0x75,
+	0x65, 0x73, 0x74, 0x1a, 0x19, 0x2e, 0x43, 0x72, 0x65, 0x61, 0x74, 0x65, 0x53, 0x75, 0x62, 0x6d,
+	0x69, 0x73, 0x73, 0x69, 0x6f, 0x6e, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x3e,
+	0x0a, 0x0d, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x12,
+	0x15, 0x2e, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63, 0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x52,
+	0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x16, 0x2e, 0x44, 0x69, 0x73, 0x70, 0x61, 0x74, 0x63,
+	0x68, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x12, 0x44,
+	0x0a, 0x0f, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e,
+	0x74, 0x12, 0x17, 0x2e, 0x52, 0x65, 0x74, 0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d,
+	0x65, 0x6e, 0x74, 0x52, 0x65, 0x71, 0x75, 0x65, 0x73, 0x74, 0x1a, 0x18, 0x2e, 0x52, 0x65, 0x74,
+	0x75, 0x72, 0x6e, 0x4a, 0x75, 0x64, 0x67, 0x65, 0x6d, 0x65, 0x6e, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x6f, 0x6e, 0x73, 0x65, 0x42, 0x11, 0x5a, 0x0f, 0x2e, 0x3b, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x5f, 0x73, 0x70, 0x65, 0x63, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -177,18 +387,26 @@ func file_submission_proto_rawDescGZIP() []byte {
 	return file_submission_proto_rawDescData
 }
 
-var file_submission_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_submission_proto_msgTypes = make([]protoimpl.MessageInfo, 6)
 var file_submission_proto_goTypes = []interface{}{
 	(*CreateSubmissionRequest)(nil),  // 0: CreateSubmissionRequest
 	(*CreateSubmissionResponse)(nil), // 1: CreateSubmissionResponse
-	(Status)(0),                      // 2: Status
+	(*DispatchJudgeRequest)(nil),     // 2: DispatchJudgeRequest
+	(*DispatchJudgeResponse)(nil),    // 3: DispatchJudgeResponse
+	(*ReturnJudgementRequest)(nil),   // 4: ReturnJudgementRequest
+	(*ReturnJudgementResponse)(nil),  // 5: ReturnJudgementResponse
+	(Status)(0),                      // 6: Status
 }
 var file_submission_proto_depIdxs = []int32{
-	2, // 0: CreateSubmissionResponse.status:type_name -> Status
+	6, // 0: CreateSubmissionResponse.status:type_name -> Status
 	0, // 1: Submissions.CreateSubmission:input_type -> CreateSubmissionRequest
-	1, // 2: Submissions.CreateSubmission:output_type -> CreateSubmissionResponse
-	2, // [2:3] is the sub-list for method output_type
-	1, // [1:2] is the sub-list for method input_type
+	2, // 2: Submissions.DispatchJudge:input_type -> DispatchJudgeRequest
+	4, // 3: Submissions.ReturnJudgement:input_type -> ReturnJudgementRequest
+	1, // 4: Submissions.CreateSubmission:output_type -> CreateSubmissionResponse
+	3, // 5: Submissions.DispatchJudge:output_type -> DispatchJudgeResponse
+	5, // 6: Submissions.ReturnJudgement:output_type -> ReturnJudgementResponse
+	4, // [4:7] is the sub-list for method output_type
+	1, // [1:4] is the sub-list for method input_type
 	1, // [1:1] is the sub-list for extension type_name
 	1, // [1:1] is the sub-list for extension extendee
 	0, // [0:1] is the sub-list for field type_name
@@ -225,6 +443,54 @@ func file_submission_proto_init() {
 				return nil
 			}
 		}
+		file_submission_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DispatchJudgeRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_submission_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*DispatchJudgeResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_submission_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReturnJudgementRequest); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_submission_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*ReturnJudgementResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -232,7 +498,7 @@ func file_submission_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_submission_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   6,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
@@ -259,6 +525,8 @@ const _ = grpc.SupportPackageIsVersion6
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://godoc.org/google.golang.org/grpc#ClientConn.NewStream.
 type SubmissionsClient interface {
 	CreateSubmission(ctx context.Context, in *CreateSubmissionRequest, opts ...grpc.CallOption) (*CreateSubmissionResponse, error)
+	DispatchJudge(ctx context.Context, in *DispatchJudgeRequest, opts ...grpc.CallOption) (*DispatchJudgeResponse, error)
+	ReturnJudgement(ctx context.Context, in *ReturnJudgementRequest, opts ...grpc.CallOption) (*ReturnJudgementResponse, error)
 }
 
 type submissionsClient struct {
@@ -278,9 +546,29 @@ func (c *submissionsClient) CreateSubmission(ctx context.Context, in *CreateSubm
 	return out, nil
 }
 
+func (c *submissionsClient) DispatchJudge(ctx context.Context, in *DispatchJudgeRequest, opts ...grpc.CallOption) (*DispatchJudgeResponse, error) {
+	out := new(DispatchJudgeResponse)
+	err := c.cc.Invoke(ctx, "/Submissions/DispatchJudge", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *submissionsClient) ReturnJudgement(ctx context.Context, in *ReturnJudgementRequest, opts ...grpc.CallOption) (*ReturnJudgementResponse, error) {
+	out := new(ReturnJudgementResponse)
+	err := c.cc.Invoke(ctx, "/Submissions/ReturnJudgement", in, out, opts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // SubmissionsServer is the server API for Submissions service.
 type SubmissionsServer interface {
 	CreateSubmission(context.Context, *CreateSubmissionRequest) (*CreateSubmissionResponse, error)
+	DispatchJudge(context.Context, *DispatchJudgeRequest) (*DispatchJudgeResponse, error)
+	ReturnJudgement(context.Context, *ReturnJudgementRequest) (*ReturnJudgementResponse, error)
 }
 
 // UnimplementedSubmissionsServer can be embedded to have forward compatible implementations.
@@ -289,6 +577,12 @@ type UnimplementedSubmissionsServer struct {
 
 func (*UnimplementedSubmissionsServer) CreateSubmission(context.Context, *CreateSubmissionRequest) (*CreateSubmissionResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateSubmission not implemented")
+}
+func (*UnimplementedSubmissionsServer) DispatchJudge(context.Context, *DispatchJudgeRequest) (*DispatchJudgeResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DispatchJudge not implemented")
+}
+func (*UnimplementedSubmissionsServer) ReturnJudgement(context.Context, *ReturnJudgementRequest) (*ReturnJudgementResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ReturnJudgement not implemented")
 }
 
 func RegisterSubmissionsServer(s *grpc.Server, srv SubmissionsServer) {
@@ -313,6 +607,42 @@ func _Submissions_CreateSubmission_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Submissions_DispatchJudge_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DispatchJudgeRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SubmissionsServer).DispatchJudge(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Submissions/DispatchJudge",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SubmissionsServer).DispatchJudge(ctx, req.(*DispatchJudgeRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Submissions_ReturnJudgement_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ReturnJudgementRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(SubmissionsServer).ReturnJudgement(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: "/Submissions/ReturnJudgement",
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(SubmissionsServer).ReturnJudgement(ctx, req.(*ReturnJudgementRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 var _Submissions_serviceDesc = grpc.ServiceDesc{
 	ServiceName: "Submissions",
 	HandlerType: (*SubmissionsServer)(nil),
@@ -320,6 +650,14 @@ var _Submissions_serviceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateSubmission",
 			Handler:    _Submissions_CreateSubmission_Handler,
+		},
+		{
+			MethodName: "DispatchJudge",
+			Handler:    _Submissions_DispatchJudge_Handler,
+		},
+		{
+			MethodName: "ReturnJudgement",
+			Handler:    _Submissions_ReturnJudgement_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
