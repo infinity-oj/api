@@ -28,14 +28,13 @@ message DispatchJudgeRequest {
 }
 
 message DispatchJudgeResponse {
-
+    string judgement_id = 1;
 }
 
 message ReturnJudgementRequest {
-    string submission_id = 1;
+    string judgement_id = 1;
+    repeated bytes outputs = 2;
 }
 
 message ReturnJudgementResponse {
-    string judgementId = 1;
-    repeated bytes outputs = 2;
 }
